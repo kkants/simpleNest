@@ -3,6 +3,7 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
+import { entities } from './users/entities';
 
 @Module({
   imports: [
@@ -16,8 +17,9 @@ import { ConfigModule } from '@nestjs/config';
       username: process.env.MYSQL_DB_USER,
       password: process.env.MYSQL_DB_PASS,
       database: process.env.MYSQL_DB_NAME,
-      entities: [],
-      synchronize: true,
+      entities,
+      synchronize: false,
+      migrationsRun: false,
     }),
   ],
   controllers: [],

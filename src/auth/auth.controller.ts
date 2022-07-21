@@ -1,4 +1,21 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get, Res } from '@nestjs/common';
+import { Response } from 'express';
 
 @Controller('auth')
-export class AuthController {}
+export class AuthController {
+  @Get('login')
+  login() {
+    return;
+  }
+
+  @Get('redirect')
+  redirect(@Res() res: Response) {
+    res.send(200);
+  }
+
+  @Get('status')
+  status() {}
+
+  @Get('logout')
+  logout() {}
+}

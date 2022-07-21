@@ -8,7 +8,5 @@ export class UsersService {
   getUser() {
     return ['u', 's', 'e', 'r', 's'];
   }
-  deleteUser() {
-
-  }
+  deleteUser() {}
 }
