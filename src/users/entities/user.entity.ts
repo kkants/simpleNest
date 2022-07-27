@@ -5,8 +5,8 @@ export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ name: 'discord_id' })
-  discord_id: string;
+  @Column({ name: 'discord_id', unique: true })
+  discordId: string;
 
   @Column()
   username: string;
